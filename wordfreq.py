@@ -2,8 +2,8 @@
 
 import sys
 import string
-
-words = sys.stdin.read().split()
+f = open("test.txt", "r")
+words = f.read().split()
 d = dict()
 for word in words:
 	t = word.translate(str.maketrans('','',string.punctuation)).upper()
@@ -13,7 +13,7 @@ for word in words:
 l = list()
 for key,value in d.items():
 	l.append((value,key))
-	
+
 l = sorted(l, reverse=True)
-for v,k in l:
-	print(k,v)
+
+
